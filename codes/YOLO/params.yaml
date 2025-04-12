@@ -1,0 +1,29 @@
+data : '/Users/saisrikanth/Desktop/suchama assignment/Suchama.v1i.yolov11/data.yaml'
+epochs : 15
+imgsz : 640
+batch : 16
+patience  :  5
+name : 'yolov11_hand_action'
+device : 'cpu'
+
+task: detect # (str) YOLO task, i.e. detect, segment, classify, pose, obb
+mode: train # (str) YOLO mode, i.e. train, val, predict, export, track, benchmark
+
+save: True # (bool) save train checkpoints and predict results
+workers: 8 # (int) number of worker threads for data loading (per RANK if DDP)
+optimizer: auto # (str) optimizer to use, choices=[SGD, Adam, Adamax, AdamW, NAdam, RAdam, RMSProp, auto]
+verbose: True # (bool) whether to print verbose output
+seed: 0 # (int) random seed for reproducibility
+
+
+# Hyperparameters ------------------------------------------------------------------------------------------------------
+lr0: 0.01 # (float) initial learning rate (i.e. SGD=1E-2, Adam=1E-3)
+lrf: 0.01 # (float) final learning rate (lr0 * lrf)
+momentum: 0.937 # (float) SGD momentum/Adam beta1
+weight_decay: 0.0005 # (float) optimizer weight decay 5e-4
+warmup_epochs: 3.0 # (float) warmup epochs (fractions ok)
+warmup_momentum: 0.8 # (float) warmup initial momentum
+warmup_bias_lr: 0.1 # (float) warmup initial bias lr
+box: 7.5 # (float) box loss gain
+cls: 0.5 # (float) cls loss gain (scale with pixels)
+dfl: 1.5 # (float) dfl loss gain
